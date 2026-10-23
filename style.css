@@ -1,0 +1,756 @@
+
+/* ==================================================
+   SkillSwap Campus — Login Page
+   ================================================== */
+
+/* 1. Global settings */
+:root {
+    --navy: #14265f;
+    --blue: #3559d8;
+    --purple: #6250df;
+    --ink: #1d2540;
+    --muted: #737c95;
+    --line: #e4e8f2;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 36px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--ink);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 12% 12%,
+            #cbd7ff 0%,
+            transparent 34%
+        ),
+        radial-gradient(
+            ellipse at 88% 85%,
+            #e1d2ff 0%,
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #edf1ff,
+            #f7f4ff 55%,
+            #e8edff
+        );
+}
+
+/* 2. Main card */
+.auth-card {
+    width: min(1120px, 100%);
+    min-height: 690px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+
+    /* Make the row fill the minimum card height */
+    grid-template-rows: minmax(690px, auto);
+
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 28px;
+    box-shadow: 0 28px 80px rgba(19, 31, 83, 0.22);
+}
+
+/* 3. Left branding panel */
+.brand-panel {
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 46px 42px 32px;
+    overflow: hidden;
+
+    color: #fff;
+    background:
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(111, 147, 255, 0.38),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #14265f,
+            #243e9c 52%,
+            #4935a6
+        );
+}
+
+.brand-panel::before,
+.brand-panel::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.brand-panel::before {
+    width: 390px;
+    height: 390px;
+    top: -205px;
+    right: -175px;
+
+    box-shadow:
+        0 0 0 28px rgba(255, 255, 255, 0.025),
+        0 0 0 58px rgba(255, 255, 255, 0.025);
+}
+
+.brand-panel::after {
+    width: 290px;
+    height: 290px;
+    bottom: 60px;
+    left: -205px;
+
+    box-shadow: 0 0 0 32px rgba(255, 255, 255, 0.025);
+}
+
+/* Logo */
+.logo {
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+}
+
+.logo h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 3.1vw, 2.65rem);
+    font-weight: 850;
+    letter-spacing: -1.7px;
+}
+
+.logo h1 span {
+    color: #9ce8d2;
+}
+
+.logo h2 {
+    margin: 8px 0 0 2px;
+    color: #c9d4ff;
+    font-size: 0.88rem;
+    font-weight: 650;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* Tagline and features */
+.tagline {
+    margin: 38px 0 22px;
+    color: #fff;
+    font-size: clamp(1.65rem, 2.6vw, 2.15rem);
+    font-weight: 750;
+    line-height: 1.28;
+    letter-spacing: -0.9px;
+}
+
+.features {
+    display: grid;
+    gap: 13px;
+    width: 100%;
+    margin-top: 3px;
+}
+
+.features p {
+    margin: 0;
+    color: #e3e9ff;
+    font-size: 0.91rem;
+    line-height: 1.5;
+}
+
+/* Campus image */
+.campus-image {
+    position: relative;
+    width: 100%;
+    height: 174px;
+    flex: 0 0 auto;
+    margin-top: 28px;
+
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 14px 30px rgba(5, 13, 51, 0.22);
+}
+
+.campus-image::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+
+    background: linear-gradient(
+        180deg,
+        transparent 55%,
+        rgba(13, 24, 70, 0.22)
+    );
+
+    pointer-events: none;
+}
+
+.campus-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 58%;
+
+    transition: transform 0.45s ease;
+}
+
+.campus-image:hover img {
+    transform: scale(1.045);
+}
+
+.slogan {
+    margin: 18px 0 0;
+    color: #dce4ff;
+    font-size: 0.9rem;
+    font-weight: 550;
+    line-height: 1.7;
+}
+
+/* 4. Right form panel */
+.form-panel {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px clamp(28px, 4.4vw, 58px);
+    background: #fff;
+}
+
+/* Sign-up line */
+.top-line {
+    min-height: 28px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.top-line a,
+.form-options a,
+.terms a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.top-line a:hover,
+.form-options a:hover,
+.terms a:hover {
+    color: var(--purple);
+    text-decoration: underline;
+}
+
+/* Login content */
+.login-container {
+    width: 100%;
+    max-width: 410px;
+    margin: auto;
+    padding: 25px 0 6px;
+}
+
+.login-container > h1 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.85rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.1px;
+}
+
+.intro {
+    max-width: 365px;
+    margin: 12px 0 28px;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+/* 5. Form fields */
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 8px;
+    color: #303954;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.input-box {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 0 14px;
+    border: 1px solid #dfe4f0;
+    border-radius: 12px;
+    background: #fbfcff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.input-box:focus-within {
+    border-color: #7188ed;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(69, 96, 218, 0.11);
+}
+
+.input-icon {
+    flex: 0 0 auto;
+    color: #7884a5;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    color: var(--ink);
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.91rem;
+}
+
+.input-box input::placeholder {
+    color: #a2a9bb;
+    opacity: 1;
+}
+
+/* Show-password button */
+.show-password {
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    border: 0;
+    border-radius: 8px;
+    color: #7b85a0;
+    background: transparent;
+
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.show-password:hover {
+    color: var(--blue);
+    background: #edf1ff;
+}
+
+/* Keyboard focus */
+.show-password:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(69, 96, 218, 0.35);
+    outline-offset: 3px;
+}
+
+/* 6. Remember me and forgot password */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 2px 0 23px;
+    font-size: 0.81rem;
+}
+
+.remember-me {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #606a83;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.form-options a {
+    font-size: 0.81rem;
+}
+
+/* 7. Main login button */
+.primary-btn {
+    width: 100%;
+    min-height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 13px 18px;
+    border: 0;
+    border-radius: 12px;
+
+    color: #fff;
+    background: linear-gradient(
+        105deg,
+        var(--blue),
+        #5a54e8
+    );
+
+    box-shadow: 0 9px 20px rgba(57, 77, 202, 0.22);
+
+    font-family: inherit;
+    font-size: 0.96rem;
+    font-weight: 750;
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 13px 25px rgba(57, 77, 202, 0.29);
+    filter: saturate(1.08);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+/* 8. OR divider */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 23px 0 19px;
+    color: #9aa2b6;
+    font-size: 0.72rem;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+}
+
+.divider::before,
+.divider::after {
+    height: 1px;
+    flex: 1;
+    content: "";
+    background: var(--line);
+}
+
+/* 9. Google and GitHub sign-in buttons */
+.social-btn {
+    position: relative;
+    width: 100%;
+    min-height: 52px;
+
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 24px;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 12px;
+    padding: 12px 18px;
+
+    border: 1px solid #dce2ee;
+    border-radius: 12px;
+    background: #fff;
+    color: #303951;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 2px 5px rgba(20, 38, 95, 0.04);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Logos drawn directly using SVG in the HTML */
+.social-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+/* Keep the label centered in the button */
+.social-label {
+    grid-column: 2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Balances the logo so the label remains centered */
+.social-btn::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+}
+
+.social-btn:hover {
+    background: #f7f9ff;
+    border-color: #aebdf2;
+    box-shadow: 0 4px 12px rgba(20, 38, 95, 0.08);
+}
+
+/* 10. Terms and privacy */
+.terms {
+    margin: 17px 0 0;
+    color: #9299aa;
+    font-size: 0.72rem;
+    line-height: 1.75;
+    text-align: center;
+}
+
+.terms a {
+    font-size: inherit;
+    font-weight: 650;
+}
+
+/* 11. Tablet */
+@media (max-width: 900px) {
+    body {
+        padding: 24px 16px;
+    }
+
+    .auth-card {
+        width: min(760px, 100%);
+        grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+        grid-template-rows: minmax(650px, auto);
+        min-height: 650px;
+    }
+
+    .brand-panel {
+        padding: 38px 28px 28px;
+    }
+
+    .tagline {
+        margin-top: 32px;
+        font-size: 1.7rem;
+    }
+
+    .features {
+        gap: 11px;
+    }
+
+    .features p {
+        font-size: 0.82rem;
+    }
+
+    .campus-image {
+        height: 145px;
+        margin-top: 24px;
+    }
+
+    .form-panel {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+/* 12. Mobile */
+@media (max-width: 680px) {
+    body {
+        display: block;
+        padding: 16px 12px;
+    }
+
+    .auth-card {
+        width: 100%;
+        max-width: 480px;
+        min-height: 0;
+
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+
+        margin: 0 auto;
+        border-radius: 22px;
+    }
+
+    .brand-panel {
+        padding: 28px 25px 24px;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .logo h2 {
+        font-size: 0.76rem;
+        letter-spacing: 4px;
+    }
+
+    .tagline {
+        margin: 24px 0 16px;
+        font-size: 1.55rem;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 12px;
+        row-gap: 10px;
+    }
+
+    .features p {
+        font-size: 0.78rem;
+    }
+
+    .campus-image {
+        height: 155px;
+        margin-top: 21px;
+    }
+
+    .slogan {
+        margin-top: 13px;
+        font-size: 0.82rem;
+    }
+
+    .form-panel {
+        padding: 23px 25px 27px;
+    }
+
+    .top-line {
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+
+    .login-container {
+        max-width: none;
+        margin: 0;
+        padding-top: 28px;
+    }
+
+    .login-container > h1 {
+        font-size: 1.9rem;
+    }
+
+    .intro {
+        margin-bottom: 23px;
+        font-size: 0.88rem;
+    }
+}
+
+/* 13. Very small phones */
+@media (max-width: 360px) {
+    body {
+        padding: 8px;
+    }
+
+    .brand-panel,
+    .form-panel {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .features {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .form-options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .social-btn {
+        font-size: 0.82rem;
+    }
+}
+
+/* 14. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* Validation error messages */
+.field-error {
+    margin: 7px 2px 0;
+    color: #c62828;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Highlight an invalid input */
+.input-box.has-error {
+    border-color: #c62828;
+    background: #fff8f8;
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.08);
+}
+
+/* Login button while submitting */
+.primary-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Visible keyboard focus for input fields */
+.input-box:focus-within {
+    outline: none;
+}

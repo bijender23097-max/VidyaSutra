@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173b9c" />
+  <meta name="description" content="Join SkillSwap Campus to exchange skills, meet learning partners, and grow together." />
+
+  <title>Create Account | SkillSwap Campus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="signup.css" />
+  <script src="auth-utils.js" defer></script>
+  <script src="signup.js" defer></script>
+</head>
+
+<body>
+  <main class="page-shell">
+
+    <!-- LEFT PANEL: BRANDING AND CAMPUS ILLUSTRATION -->
+    <aside class="hero-panel" aria-label="About SkillSwap Campus">
+
+      <div class="hero-content">
+
+        <a class="brand" href="#top" aria-label="SkillSwap Campus home">
+
+          <!-- SkillSwap logo -->
+          <svg class="brand-mark" viewBox="0 0 70 62" aria-hidden="true">
+            <circle cx="19" cy="11" r="8" fill="#12d8ee" />
+            <circle cx="49" cy="11" r="8" fill="#8df18c" />
+
+            <path d="M4 47V32c0-10 7-16 15-16s15 6 15 16v5l-9 8-8-7v9H4Z"
+                  fill="#2a93ff" />
+
+            <path d="M36 31c0-9 6-15 14-15s15 6 15 16v15L49 56l-9-7V36l-4 4v-9Z"
+                  fill="#16c99a" />
+
+            <path d="M27 39c5 0 9-2 12-6m-1-7 2 7-7 2"
+                  fill="none"
+                  stroke="#b8ff9e"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+          </svg>
+
+          <span class="brand-wordmark">
+            <span class="brand-name">Skill<span>Swap</span></span>
+            <span class="brand-campus">C A M P U S</span>
+          </span>
+
+        </a>
+
+        <div class="hero-copy" id="top">
+
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            YOUR CAMPUS. YOUR COMMUNITY.
+          </p>
+
+          <h1>
+            Exchange Skills.<br />
+            Build Connections.<br />
+            <span>Grow Together.</span>
+          </h1>
+
+          <p class="hero-description">
+            Find people who can teach what you want to learn —
+            and help others with what you know.
+          </p>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="feature-list">
+
+          <div class="feature-row">
+            <span class="feature-icon icon-purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4.5 21v-2.3a7.5 7.5 0 0 1 15 0V21Z"/>
+              </svg>
+            </span>
+
+            <div>
+              <h2>Smart Profiles</h2>
+              <p>Showcase your skills, links &amp; interests.</p>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <span class="feature-icon icon-green" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="10.5" cy="10.5" r="6.5"/>
+                <path d="m16 16 5 5"/>
+              </svg>
+            </span>
+
+            <div>
+              <h2>Skill Search &amp; Ratings</h2>
+              <p>Find the right learning partner for any skill.</p>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <span class="feature-icon icon-orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 10c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 1 1 16 0Z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+            </span>
+
+            <div>
+              <h2>Meet on Campus</h2>
+              <p>Choose a familiar spot and learn together.</p>
+            </div>
+          </div>
+
+          <div class="feature-row">
+            <span class="feature-icon icon-violet" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="14" rx="1.5"/>
+                <path d="M8 21h8m-4-4v4M7 13l4-4 2 2 4-5"/>
+              </svg>
+            </span>
+
+            <div>
+              <h2>Shared Whiteboard</h2>
+              <p>Can't meet offline? Learn together online.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CAMPUS IMAGE -->
+      <div class="hero-art-wrap" aria-hidden="true">
+        <p class="handwritten-note">
+          Real skills. Real people.<br />
+          Same campus.
+        </p>
+
+        <img
+          class="hero-art"
+          src="meet.png"
+          alt=""
+        />
+      </div>
+
+      <div class="hero-bottom-note">
+        <span class="mini-spark">✦</span>
+        Share what you know. Discover what you can do.
+      </div>
+
+    </aside>
+
+    <!-- RIGHT PANEL: SIGNUP FORM -->
+    <section class="signup-panel" aria-labelledby="signup-title">
+
+        <div class="top-link">
+            Already have an account?
+            <a href="login.html">
+                Log In <span aria-hidden="true">→</span>
+            </a>
+        </div>
+
+      <header class="form-heading">
+
+        <div class="heading-icon" aria-hidden="true">
+          <svg viewBox="0 0 28 28">
+            <circle cx="11" cy="8" r="4.5"/>
+            <path d="M2.8 23v-2.2a8.2 8.2 0 0 1 16.4 0V23Z"/>
+            <path d="M22 10v10m-5-5h10"/>
+          </svg>
+        </div>
+
+        <div>
+          <h2 id="signup-title">Create Your Account</h2>
+          <p>
+            Join SkillSwap Campus and start your<br class="desktop-break" />
+            skill exchange journey today.
+          </p>
+        </div>
+
+      </header>
+
+      <form id="signup-form">
+
+        <!-- SECTION 01: ACCOUNT DETAILS -->
+        <section class="form-section" aria-labelledby="account-section-title">
+
+          <div class="section-heading">
+            <span class="section-number number-blue">01</span>
+            <h3 id="account-section-title">Account details</h3>
+          </div>
+
+          <div class="field-group">
+            <label for="full-name">
+              Full name <span class="required">*</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/>
+              </svg>
+
+              <input
+                id="full-name"
+                name="fullName"
+                type="text"
+                autocomplete="name"
+                placeholder="e.g. Aditi Sharma"
+                required
+                minlength="2"
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="college-email">
+              College email <span class="required">*</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m4 7 8 6 8-6"/>
+              </svg>
+
+              <input
+                id="college-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <p class="field-help">Use an email you check regularly.</p>
+          </div>
+
+          <div class="two-column-fields">
+
+            <div class="field-group">
+              <label for="password">
+                Password <span class="required">*</span>
+              </label>
+
+              <div class="input-wrap password-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="11" rx="2"/>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                </svg>
+
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="At least 8 characters"
+                  required
+                  minlength="8"
+                />
+
+                <button
+                  class="show-password"
+                  type="button"
+                  data-toggle-password="password"
+                  aria-label="Show password"
+                >Show</button>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="confirm-password">
+                Confirm password <span class="required">*</span>
+              </label>
+
+              <div class="input-wrap password-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="11" rx="2"/>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                </svg>
+
+                <input
+                  id="confirm-password"
+                  name="confirmPassword"
+                  type="password"
+                  autocomplete="new-password"
+                  placeholder="Enter it again"
+                  required
+                  minlength="8"
+                />
+
+                <button
+                  class="show-password"
+                  type="button"
+                  data-toggle-password="confirm-password"
+                  aria-label="Show confirm password"
+                >Show</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 02: SKILL PROFILE -->
+        <section class="form-section" aria-labelledby="profile-section-title">
+
+          <div class="section-heading section-heading-with-description">
+            <span class="section-number number-green">02</span>
+
+            <div>
+              <h3 id="profile-section-title">Your skill profile</h3>
+              <p>
+                Help your future learning partners find you.
+                You can update these details later.
+              </p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="github">
+              GitHub profile <span class="optional">(OPTIONAL)</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon filled-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .8A11.2 11.2 0 0 0 8.46 22.62c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.29-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.69.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.64 5.27-5.15 5.55.4.35.76 1.03.76 2.08v3.09c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/>
+              </svg>
+
+              <input
+                id="github"
+                name="github"
+                type="url"
+                inputmode="url"
+                placeholder="https://github.com/you"
+              />
+
+              <span class="external-mark" aria-hidden="true">↗</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="linkedin">
+              LinkedIn profile <span class="optional">(OPTIONAL)</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon linkedin-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8 18.5H5V9h3v9.5ZM6.5 7.7a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48ZM19 18.5h-3v-4.62c0-1.1-.02-2.52-1.54-2.52-1.54 0-1.78 1.2-1.78 2.44v4.7h-3V9h2.88v1.3h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.56 2 3.56 4.6v5.14Z"/>
+              </svg>
+
+              <input
+                id="linkedin"
+                name="linkedin"
+                type="url"
+                inputmode="url"
+                placeholder="https://linkedin.com/in/you"
+              />
+
+              <span class="external-mark" aria-hidden="true">↗</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="teach-skills">
+              Skills I can teach <span class="required">*</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m20.6 13.4-7.2 7.2a2 2 0 0 1-2.8 0L3.4 13.4a2 2 0 0 1 0-2.8l7.2-7.2a2 2 0 0 1 1.4-.6H19a2 2 0 0 1 2 2v7a2 2 0 0 1-.4 1.6Z"/>
+                <circle cx="16" cy="8" r="1.3"/>
+                <path d="m7.5 12.5 4 4"/>
+              </svg>
+
+              <input
+                id="teach-skills"
+                name="teachSkills"
+                type="text"
+                placeholder="e.g. Python, HTML, public speaking"
+                required
+              />
+            </div>
+
+            <p class="field-help">Separate skills with commas.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="learn-skills">
+              Skills I want to learn <span class="required">*</span>
+            </label>
+
+            <div class="input-wrap">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <circle cx="12" cy="12" r="5.5"/>
+                <circle cx="12" cy="12" r="2"/>
+                <path d="m14 10 6-6"/>
+              </svg>
+
+              <input
+                id="learn-skills"
+                name="learnSkills"
+                type="text"
+                placeholder="e.g. C++, UI design, video editing"
+                required
+              />
+            </div>
+
+            <p class="field-help">List the skills you want help with.</p>
+          </div>
+
+        </section>
+
+        <!-- SECTION 03: MEETING LOCATION -->
+        <section class="form-section meeting-section" aria-labelledby="meeting-section-title">
+
+          <div class="section-heading">
+            <span class="section-number number-violet">03</span>
+
+            <div>
+              <h3 id="meeting-section-title">
+                Preferred campus meeting spot
+                <span class="optional">(OPTIONAL)</span>
+              </h3>
+
+              <p>Choose a preferred spot or add your own.</p>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="visually-hidden" for="meeting-spot">
+              Choose a preferred spot
+            </label>
+
+            <div class="input-wrap select-wrap">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 10c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 1 1 16 0Z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+
+              <select id="meeting-spot" name="meetingSpot">
+                <option value="">Choose a preferred spot</option>
+                <option>Healthy Hut</option>
+                <option>A Block</option>
+                <option>B Block</option>
+                <option>C Block</option>
+                <option>D Block</option>
+                <option>H Block</option>
+                <option>Ground</option>
+                <option>Gym</option>
+                <option>Library</option>
+                <option>Cafeteria</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-group custom-spot-group">
+            <label for="custom-spot">Or add your own</label>
+
+            <div class="input-wrap">
+              <svg class="field-icon add-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v10M7 12h10"/>
+              </svg>
+
+              <input
+                id="custom-spot"
+                name="customSpot"
+                type="text"
+                placeholder="e.g. Healthy Hut, A Block, Ground, Gym..."
+              />
+            </div>
+          </div>
+
+        </section>
+
+        <!-- COMMUNITY GUIDELINES -->
+        <label class="terms-row" for="terms">
+          <input id="terms" name="terms" type="checkbox" required />
+
+          <span>
+            I agree to use SkillSwap respectfully and follow
+            the campus community guidelines.
+          </span>
+        </label>
+
+        <!-- CREATE ACCOUNT BUTTON -->
+        <button class="primary-button" type="submit">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M2 21v-2a7 7 0 0 1 14 0v2M19 8v8m-4-4h8"/>
+          </svg>
+
+          Create Account <span aria-hidden="true">→</span>
+        </button>
+
+        <div class="divider">
+          <span></span>
+          <b>OR</b>
+          <span></span>
+        </div>
+
+        <!-- GOOGLE SIGNUP PLACEHOLDER -->
+        <button
+          class="google-button"
+          type="button"
+          data-demo-action="google"
+        >
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5Z" transform="translate(0 4) scale(1 .83)"/>
+            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.76 7.18l7.73 6C44.42 38.02 46.98 31.92 46.98 24.55Z"/>
+            <path fill="#FBBC05" d="M10.53 28.59a14.4 14.4 0 0 1 0-9.18l-7.98-6.19a23.9 23.9 0 0 0 0 21.56l7.98-6.19Z"/>
+            <path fill="#34A853" d="M24 48c6.48 0 11.94-2.13 15.91-5.8l-7.73-6c-2.14 1.44-4.89 2.3-8.18 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48Z"/>
+          </svg>
+
+          Sign up with Google
+        </button>
+
+        <p class="form-footnote">
+          By joining, you are helping build a campus where everyone can teach and learn.
+        </p>
+
+        <p
+          id="form-message"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </form>
+    </section>
+  </main>
+</body>
+</html>

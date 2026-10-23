@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap Campus | Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="auth-card">
+
+        <!-- Left Branding Panel -->
+        <section class="brand-panel">
+
+            <div class="logo">
+                <h1>Skill<span>Swap</span></h1>
+                <h2>Campus</h2>
+            </div>
+
+            <p class="tagline">
+                Exchange Skills.<br>
+                Grow Together.<br>
+                Build a Better You.
+            </p>
+
+            <div class="features">
+                <p>🎓 Learn new skills</p>
+                <p>👥 Meet like-minded peers</p>
+                <p>⇄ Exchange, not just pay</p>
+                <p>🌱 Make your college life more meaningful</p>
+            </div>
+
+            <div class="campus-image">
+                <img src="campus.png" alt="College campus">
+            </div>
+
+            <p class="slogan">
+                Skills today,<br>
+                Opportunities tomorrow.
+            </p>
+
+        </section>
+
+        <!-- Right Login Panel -->
+        <section class="form-panel">
+
+            <div class="top-line">
+                <span id="account-prompt">Don't have an account?</span>
+                <a href="signup.html" id="signup-link">Sign Up</a>
+            </div>
+
+            <div class="login-container" id="login-container">
+
+                <h1>Welcome Back!</h1>
+
+                <p class="intro">
+                    Log in to your SkillSwap Campus account
+                    and continue your skill journey.
+                </p>
+
+                <form action="#" method="post">
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+
+                        <div class="input-box">
+                            <span class="input-icon" aria-hidden="true">✉</span>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="test@kiet.edu"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+
+                        <div class="input-box">
+                            <span class="input-icon" aria-hidden="true">🔒</span>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >◉</button>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me and Forgot Password -->
+                    <div class="form-options">
+
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+
+                        <a href="forgot-password.html">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <button type="submit" class="primary-btn">
+                        Log In →
+                    </button>
+
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Google Login -->
+                <a href="/auth/google" class="social-btn">
+                    <svg
+                        class="social-icon"
+                        viewBox="0 0 48 48"
+                        aria-hidden="true"
+                    >
+                        <path fill="#4285F4"
+                            d="M43.6 24.5c0-1.4-.1-2.7-.4-4H24v7.6h11a9.4 9.4 0 0 1-4.1 6.2v5h6.6c3.9-3.6 6.1-8.8 6.1-14.8z"/>
+                        <path fill="#34A853"
+                            d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5c-1.8 1.2-4 2-6.9 2-5.3 0-9.8-3.6-11.4-8.4H5.8v5.2A20 20 0 0 0 24 44z"/>
+                        <path fill="#FBBC05"
+                            d="M12.6 27.8a12 12 0 0 1 0-7.6V15H5.8a20 20 0 0 0 0 17.9z"/>
+                        <path fill="#EA4335"
+                            d="M24 12c3 0 5.6 1 7.7 3l5.8-5.8A19.4 19.4 0 0 0 24 4 20 20 0 0 0 5.8 15l6.8 5.2C14.2 15.6 18.7 12 24 12z"/>
+                    </svg>
+
+                    <span class="social-label">Continue with Google</span>
+                </a>
+
+                <!-- GitHub Login -->
+                <a href="/auth/github" class="social-btn">
+                    <svg
+                        class="social-icon github-logo"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path fill="currentColor"
+                            d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.68-3.75-1.32-3.75-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.24 3.26 1.73.1-.72.39-1.2.7-1.47-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.15a10.6 10.6 0 0 1 5.57 0c2.12-1.45 3.06-1.15 3.06-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.28-2.61 5.23-5.1 5.5.4.35.75 1.03.75 2.08v3.24c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+                    </svg>
+
+                    <span class="social-label">Continue with GitHub</span>
+                </a>
+
+                <!-- Terms and Privacy -->
+                <p class="terms">
+                    By continuing, you agree to our
+                    <a href="terms.html">Terms of Service</a>
+                    and
+                    <a href="privacy.html">Privacy Policy</a>.
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="auth-utils.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
